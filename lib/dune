@@ -1,2 +1,9 @@
 (library
- (name appel))
+ (name appel)
+ (libraries core ppx_deriving.show)
+ (preprocess (pps ppx_deriving.show)))
+
+(ocamllex lexer)
+
+(menhir
+ (modules parser))

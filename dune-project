@@ -21,7 +21,7 @@
  (name appel)
  (synopsis "A short synopsis")
  (description "A longer description")
- (depends ocaml)
+ (depends ocaml (alcotest :with-test))
  (tags
   ("add topics" "to describe" your project)))
 

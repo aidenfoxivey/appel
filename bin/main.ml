@@ -1,5 +1,5 @@
 open Core
-open Ast
+open Appel.Ast
 (* open Parser *)
 
 (*
@@ -44,7 +44,7 @@ let () =
 
   let lexed = In_channel.read_all "sample_programs/merge.tig" |> Lexing.from_string in
   try
-  Parser.program Lexer.read lexed |> show_expr |> printf "%s\n"
+  Appel.Parser.program Appel.Lexer.read lexed |> show_expr |> printf "%s\n"
   with
   | e ->
     let pos = lexed.Lexing.lex_curr_p in
