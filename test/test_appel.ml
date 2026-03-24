@@ -77,8 +77,8 @@ let () =
         ; make "test45.tig"
         ; make "test46.tig"
         ; make "test47.tig"
-        ; make "test48.tig" (* As far as I know, test49 is the only syntax error *)
-        ; make_fails "test49.tig"
+        ; make "test48.tig"
+        ; make_fails "test49.tig" (* As far as I know, test49 is the only syntax error *)
         ] )
     ]
 ;;
