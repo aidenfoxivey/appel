@@ -1,0 +1,1 @@
+Code in `/sample_programs` is copyright of Andrew W. Appel. Originally sourced from [his site](https://www.cs.princeton.edu/~appel/modern/testcases/).
