@@ -9,7 +9,7 @@ type bop =
   | Le
   | Eq
   | Neq
-  [@@deriving show]
+[@@deriving show]
 
 type ty =
   | TyId of string
@@ -18,11 +18,11 @@ type ty =
   (* E.G. `array of int` *)
   | TyArray of ty
 
-  and tyfield = {
-    field_name : string;
-    field_ty: ty;
+and tyfield =
+  { field_name : string
+  ; field_ty : ty
   }
-  [@@deriving show]
+[@@deriving show]
 
 type expr =
   | String of string
@@ -43,23 +43,23 @@ type expr =
   | RecordCreate of string * (string * expr) list
   | Let of dec list * expr list
 
-  and lvalue =
+and lvalue =
   | LId of string
   (* E.G. `v3.x` - selects field x from record v3 *)
   | LField of lvalue * string
   (* E.G. `v3[2]` - selects element at index 2 from array v3 *)
   | LIndex of lvalue * expr
 
-  and dec =
-    (* type type-id = ty *)
-    | TyDec of string * ty
-    | VarDec of vardec
-    (* function func-id (param1: ty1, param2: ty2, ...) : ty = body *)
-    | FunDec of string * tyfield list * ty option * expr
+and dec =
+  (* type type-id = ty *)
+  | TyDec of string * ty
+  | VarDec of vardec
+  (* function func-id (param1: ty1, param2: ty2, ...) : ty = body *)
+  | FunDec of string * tyfield list * ty option * expr
 
-  and vardec = {
-    var_name : string;
-    var_ty : ty option;
-    var_exp: expr;
+and vardec =
+  { var_name : string
+  ; var_ty : ty option
+  ; var_exp : expr
   }
-  [@@deriving show]
+[@@deriving show]
