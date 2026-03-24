@@ -1,4 +1,5 @@
 (test
  (name test_appel)
  (libraries appel alcotest)
- (deps (source_tree sample_programs)))
+ (deps
+  (source_tree sample_programs)))
